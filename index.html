@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+    span.s2 {font: 12.0px 'Apple SD Gothic Neo'; font-kerning: none}
+    span.s3 {font: 12.0px 'Apple Color Emoji'; font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="ko"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;</span><span class="s2">양방향</span><span class="s1"> </span><span class="s2">환율</span><span class="s1"> </span><span class="s2">계산기</span><span class="s1"> (USD </span><span class="s2">↔</span><span class="s1"> KRW)&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>body {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-family: Arial, sans-serif;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin: 2em;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>max-width: 600px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>input {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 16px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding: 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin-top: 5px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>box-sizing: border-box;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>label {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-weight: bold;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>display: block;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin-top: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>#rate-display {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin-top: 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #444;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>#note {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin-top: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 14px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #888;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;h2&gt;</span><span class="s3">💱</span><span class="s1"> USD </span><span class="s2">↔</span><span class="s1"> KRW </span><span class="s2">실시간</span><span class="s1"> </span><span class="s2">환율</span><span class="s1"> </span><span class="s2">계산기</span><span class="s1">&lt;/h2&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="rate-display"&gt;</span><span class="s2">환율</span><span class="s1"> </span><span class="s2">로딩</span><span class="s1"> </span><span class="s2">중</span><span class="s1">...&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;label for="usd"&gt;</span><span class="s3">💵</span><span class="s1"> </span><span class="s2">달러</span><span class="s1"> (USD):&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;input type="number" id="usd" placeholder="</span><span class="s2">예</span><span class="s1">: 1000" oninput="convertFromUSD()" /&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;label for="krw"&gt;</span><span class="s3">💴</span><span class="s1"> </span><span class="s2">원화</span><span class="s1"> (KRW):&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;input type="number" id="krw" placeholder="</span><span class="s2">예</span><span class="s1">: 1300000" oninput="convertFromKRW()" /&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="note"&gt;※ </span><span class="s2">숫자를</span><span class="s1"> </span><span class="s2">입력하면</span><span class="s1"> </span><span class="s2">자동</span><span class="s1"> </span><span class="s2">계산됩니다</span><span class="s1">.&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let rate = null;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let isTyping = false; // </span><span class="s2">입력</span><span class="s1"> </span><span class="s2">충돌</span><span class="s1"> </span><span class="s2">방지</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>async function fetchRate() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>try {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const res = await fetch('https://api.exchangerate.host/latest?base=USD&amp;symbols=KRW');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const data = await res.json();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>rate = data.rates.KRW;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('rate-display').innerText =</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>`</span><span class="s3">📈</span><span class="s1"> </span><span class="s2">현재</span><span class="s1"> </span><span class="s2">환율</span><span class="s1">: 1 USD = ${rate.toLocaleString()} KRW`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} catch (e) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('rate-display').innerText =</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>'</span><span class="s3">❌</span><span class="s1"> </span><span class="s2">환율</span><span class="s1"> </span><span class="s2">정보를</span><span class="s1"> </span><span class="s2">불러올</span><span class="s1"> </span><span class="s2">수</span><span class="s1"> </span><span class="s2">없습니다</span><span class="s1">.';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>console.error(e);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function convertFromUSD() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (!rate || isTyping) return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>isTyping = true;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const usd = parseFloat(document.getElementById('usd').value);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (!isNaN(usd)) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const krw = usd * rate;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('krw').value = krw.toFixed(2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('krw').value = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>isTyping = false;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function convertFromKRW() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (!rate || isTyping) return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>isTyping = true;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const krw = parseFloat(document.getElementById('krw').value);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (!isNaN(krw)) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const usd = krw / rate;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('usd').value = usd.toFixed(2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('usd').value = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>isTyping = false;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>fetchRate();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
